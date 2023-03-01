@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //pour les constantes
+        //const nombre = 15;
+
+        //; pas obligatoire
+
+        //let pour declarer une variable et pouvoir la changer
+        /*       let nombre = 15;
+               //var a = 1;  et a = 1; c'est la meme chose mais c'est obselete
+               nombre = 16;
+               //passage a la ligne comme sur php en console \n
+               let mot = "Bonjour toi\nViens ici !\n";
+       
+               //nouvelle manière d'ecrire et passer a la ligne 
+               let mot2 = `Bonjour toi
+       Je passe a la ligne`;
+       
+               //concaténation avec le +
+               let mot3 = mot +' '+ mot2;
+       
+               //concaténation équivalente nouvelle
+               let mot4 = `${mot} ${mot2}`;
+       
+               //type null permet d'indiquer une absence de valeur, il n'ya rien dedans
+               const testo = null;
+       
+               //type undefined, permet d'indiquer qu'une variable n'est pas défini
+               let testo1 = undefined
+               //si j'ecris let c, on vera que c n'est pas défini
+       
+               //tableau index a 0 aussi
+               const notes = [10,13,"Hello",17,9];
+        
+               //objet avec des attributs dont un tableau et un objet 
+               const person = {
+                   firstname: "Jack",
+                   lastname: "Bauer",
+                   age: 35,
+                   note: notes,
+                   job: {
+                       name: "Informaticien",
+                       hours: 35
+                   }
+               }
+               //appel ce serait par exemple si je veux le nom du job : person.job.name 
+               //on peut aussi appeler avec person['job']['name']
+       
+               //typeof c'est pour avoir le type
+               //tout type est objet 
+       
+               //attention operation mathematique avec virgule
+               
+               //4 + '3' donnera '43'
+               //2 * '2' donnera 4
+               //2 * 'a' donnera NaN Not a Number
+       
+               //Attention pour tableau et objet
+               let tab = [0,15,3];
+               let tab2 = tab;
+               //ils seront les mêmes par contre si on modifie tab[1] = 10
+               tab[1] = 10;
+               //ca modifiera dans les deux tableaux pcq ils font reference au meme objet
+       
+               console.log("Bonjour vous");
+       
+               //condition
+               let age = 16;
+               const pays = "US";
+               const peutConduireBelgique = pays === "BE" && age >= 18;
+               const peutConduireUS = pays === "US" && age >= 16;
+               if(peutConduireBelgique || peutConduireUS){
+                   console.log("Vous avez le droit de conduire");
+               }else{
+                   console.log("Vous ne pouvez pas conduire");
+               }
+       
+               // '' == false donne true
+               
+       */
+        /*        const age = prompt("Veuillez introduire votre age : ");
+                if(isNaN(age)){
+                    console.log("Veuillez introduire un nombre");
+                }else{
+                    if(age <= 13){
+                        console.log("Tu peux regarder Roi lion");
+                    }else if (age < 18){
+                        console.log("Tu peux regarder Matrix");
+                    }else{
+                        console.log("Tu peux regarder Evil Dead");
+                    }
+                }
+        */
+        /*        const notes = [12,514,84,852,95,895];
+                //marche principalement sur les tableaux, on peut utiliser pour string aussi
+                for(let i  in notes){
+                    console.log(notes[i]);
+                }
+                // for in equilavent du foreach
+                for(let i  of notes){
+                    console.log(i);
+                }
+        */
+        /*
+                let age = prompt("Entre ton age");
+                let pays = prompt("Entre ton pays (BE)");
+                console.log(canDrive(age,pays));
+                function canDrive(age, pays) {
+                    const peutConduireBelgique = pays === "BE" && age >= 18;
+        
+                    if (peutConduireBelgique) {
+                        return true;
+                    }
+                    return false;
+                }
+        */
+        /*
+                //attention en javascript on peut declarer des variable endehors des fonctions 
+                let i = 0;
+                console.log(i);
+                hello('Julien');
+                console.log(i);
+                hello('Lisa');
+                console.log(i);
+                function hello(name){
+                    i++;
+                    console.log(`Bonjour ${name}`);
+                }
+                //par contre la variable name n'est accessible que dans la fonction
+        */
+        /*
+                //attention ici, vu qu'on a un objet, il modifie l'objet reférencé
+                const notes = [12,18,7];
+                upNotes(notes);
+                console.log(notes);
+                function upNotes(n){
+                    n[0]+=2; 
+                }
+        */
+
+        /*
+                //this fait reférence a l'objet courant
+                maFonction();
+                maFonction.call(3);
+                function maFonction(){
+                    console.log(this);
+                }
+        
+                //this fait reférence a l'objet courant
+                const person = {
+                    nom: "Dunia",
+                    prenom: "Julien",
+                    fullname: function(){
+                        console.log(this.nom+ ' '+ this.prenom);
+                    }
+                }
+                person.fullname();
+        */
+        /*
+                //Attention pour l'application des fonctions existante
+                console.log('heLlo'.toUpperCase())
+        
+                //Une fonction avec qu'un seul return on peut utiliser
+                //une fonction fléché
+                const somme = (a, b) => a +b;
+                console.log(somme(1,2));
+        
+                //on peut mettre une fonction en paramètre d'une fonction
+                //ca s'appelle un callback
+        
+                //Pour trouver le max d'un tableau, attention ...
+                notes = [12,5,13,7,18,16,5.3,9,6.5,17];
+                console.log(Math.max(...notes))
+        */
+        /* exo fct       const phrase = "Application Application Web Interne en Symfony pour les membres du personnel Cfitech servant à l'inscription de stagiaire, la gestion des formations, la gestion d'événements, la gestion des présences et gestions d'emprunt du matériel";
+               creation(phrase);
+               function creation(phrase) {
+                   phrase = phrase
+                       .replaceAll(", ", " ")
+                       .replaceAll("'", " ")
+                       .toLowerCase();
+                   tab = phrase.split(' ');
+                   //console.log(tab);
+                   tab2 = {};
+                   for (mot of tab) {
+                       if (tab2.length != 0) {
+                           if (mot in tab2) {
+                               tab2[mot]++;
+                           } else {
+                               tab2[mot] = 1;
+                           }
+                       } else {
+                           tab2 = {
+                               [mot]: 1
+                           }
+                       }
+                   }
+                   //console.log(tab2);
+                   const tabTrier = [];
+                   
+                   for (let key in tab2) {
+                       tabTrier.push({
+                           mot: key,
+                           count: tab2[key]
+                       })
+                   }
+                   tabTrier.sort((a,b) => b.count - a.count);
+                   console.log(`
+                       Les mots les plus fréquents sont \"${tabTrier[0].mot}\"(${tabTrier[0].count}), \"${tabTrier[1].mot}\"(${tabTrier[1].count}) et \"${tabTrier[2].mot}\"(${tabTrier[2].count})
+                   `);
+               }
+         */
+        //FIN FONCTION
+        //DEBUT OO
+        /*
+                class Student{
+                    ecole = "Saint-Jean";
+                    //propriété privé avec diezz mais c'est très récent
+                    //on utilise _nomVariable pour dire que c'est interne 
+                    #notes = [];
+        
+                    constructor(firstname, lastname){
+                        this.firstname = firstname;
+                        this.lastname= lastname;
+                    }
+                    set notes(notes){
+                        if(Array.isArray(notes)){
+                            this.#notes = notes;
+                        }
+                    }
+                    get notes(){
+                        return this.#notes;
+                    }
+                    get name (){
+                        return `${this.firstname} ${this.lastname}`;
+                    }
+                    canPass(){
+                        return moyenne(this.#notes) >= Student.moyenne;
+                    }
+                    static moyenne = 10;
+        
+                }
+                class SuperStudent extends Student{
+                    #notes = []; 
+                    constructor (firstname,lastname,notes){
+                        super(firstname,lastname);
+                        this.#notes = notes;
+                    }
+                   get name(){
+                        return 'Super '+super.name;
+                    }
+                     canPass(){
+                        return "Une autre reponse";
+                     }
+                }
+                
+                const etd1 = new SuperStudent('Julien', 'Dunia',[9,4,12]);
+                const etd2 = new Student("Jack", "Bauer");
+                
+                
+                console.log(etd1, etd1.canPass(), etd1.name);
+                etd2.notes = [19,10,8];
+                console.log(etd2, etd2.canPass(), etd2.name);
+                function moyenne(notes){
+                    sum = 0;
+                    
+                    for(note of notes){
+                        sum = sum + note;
+                    }
+                    return (sum/notes.length);
+                }
+        */
+        /*
+            class Rectangle{
+                _larg;
+                _haut;
+                constructor(larg, haut){
+                    this._haut = haut;
+                    this._larg = larg;
+                }
+                get perimetre(){
+                    return (2*this._larg)+ (2*this._haut);
+                }
+                get isValid(){
+                   
+                    return this._haut > 0 && this._larg > 0;
+                }
+                isBiggerThan(shape){
+                   
+                    return this.perimetre > shape.perimetre;
+                }
+            }
+            class Square extends Rectangle{
+                
+                constructor(haut){
+                    super(haut,haut);
+                }
+            }
+            const r = new Rectangle(10,20);
+            console.log(r.perimetre);
+            console.log(r.isValid);
+            const r2 = new Rectangle(-10,20);
+            console.log(r2.isValid);
+            const c = new Square(10);
+            console.log(c.perimetre);
+            console.log(c.isBiggerThan(r));
+            console.log(r.isBiggerThan(c));
+        */
+
+        /*    class Book{
+                #page = 1;
+                constructor(title, pages){
+                    this.title = title;
+                    this.pages = pages;
+                }
+                get page(){
+                    return this.#page;
+                }
+                nextPage(){
+                    if(this.#page < this.pages){
+                        this.#page++;
+                    }
+                }
+                close(){
+                    this.#page = 1;
+                }
+            }
+            class Library{
+        
+                #books=[];
+                addBook(book){
+                    this.#books.push(book);
+        
+                }
+                addBooks(books){
+                    for(let book of books){
+                       // this.addBook(book);
+                    }
+                    //le foreach pour les tableaux, c'est lequilavent
+                    books.forEach(this.addBook, this)
+                }
+                findBooksByLetter(lettre){
+                    const found = [];
+                    for(let book of this.#books){
+                        if(book.title[0].toLowerCase() === lettre.toLowerCase()){
+                            found.push(book);
+                        }
+                    }
+                   // return found;
+        
+                    //equivalent avec filter en une ligne
+                    return this.#books.filter((book)=> book.title[0].toLowerCase() === lettre.toLowerCase())
+                }
+            }
+            const b = new Book("Seigneur des anneaux",200);
+            console.log(b.page);
+            b.nextPage();
+            console.log(b.page);
+            b.close();
+            console.log(b.page);
+            const l = new Library();
+            l.addBook(b);
+            l.addBooks([
+                new Book('Ready player one', 100),
+                new Book('Oui-Oui', 10),
+                new Book('Sillage',50)
+            ]);
+            console.log(l.findBooksByLetter('s'));
+        */
+
+        //GESTION DES ERREURS
+/*        class Rectangle {
+
+            constructor(larg, haut) {
+                if (larg <= 0 || haut <= 0) {
+                    throw new Error("Impossible d'avoir une forme géometrique avec des dimensions négatives");
+                }
+                this._haut = haut;
+                this._larg = larg;
+
+
+            }
+            get perimetre() {
+                return (2 * this._larg) + (2 * this._haut);
+            }
+            get isValid() {
+
+                return this._haut > 0 && this._larg > 0;
+            }
+            isBiggerThan(shape) {
+
+                return this.perimetre > shape.perimetre;
+            }
+        }
+        class Square extends Rectangle {
+
+            constructor(haut) {
+                super(haut, haut);
+            }
+        }
+
+
+        try {
+            const l = parseInt(prompt('Largeur'), 10);
+            const h = parseInt(prompt('Hauteur'), 10);
+            const r = new Rectangle(l, h);
+            console.log(r.perimetre);
+        } catch (e) {
+            console.log(e.message)
+        }
+*/
+
+//LES TIMERS (1000 = 1 seconde)
+/*
+        //manière synchrone, va attendre que le timer termine pour afficher ce qui suit
+        function wait(duration){
+            const t = Date.now();
+            while(Date.now()- t < duration){
+
+            }
+        }
+        console.log('Bonjour');
+        wait(1000);
+        console.log('les gens');
+        console.log('aurevoir');
+
+        //manière asynchrone, va afficher ce qui suit meme si le timer n'est pas fini
+        console.log('Bonjour');
+        setTimeout(()=>{
+            console.log('les gens');
+        },1000);
+        console.log('aurevoir');
+
+        //va afficher ca avec interval d'une seconde
+        console.log('Bonjour');
+        const t = setInterval(()=> {
+            console.log('les gens');
+        },1000);
+        console.log(t);
+    */
+//HTTP avec fecth()- API json
+     /*   //une promesse reussi c'est fullfiled
+        //ici on recup les données au format text
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(r => r.text())
+            .then(body => console.log(body)); 
+        
+        //ici au format json
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(r => r.json())
+            .then(body => console.log(body)); 
+     */
+/*
+        //affiche avec le GET
+        async function fetchUsers(){
+            const reponse = await fetch('https://jsonplaceholder.typicode.com/users',{
+                method: 'GET',
+                headers: {
+                    "Accept": "application/json",
+                }
+            })
+            if(reponse.ok === true){
+                return reponse.json();
+            }
+            throw new Error('Impossible de contacter le serveur');
+        }
+        fetchUsers().then(users => console.log(users));
+
+        //le post avec des articles
+        async function fetchUsers2(){
+            const reponse = await fetch('https://jsonplaceholder.typicode.com/posts',{
+                method: 'POST',
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({title: 'Mon premier post'})
+                //la manière avec chaine de caractère
+               // body: '{"title": "Mon premier post"}'
+            })
+            if(reponse.ok === true){
+                return reponse.json();
+            }
+            throw new Error('Impossible de contacter le serveur');
+        }
+        fetchUsers2().then(articles => console.log(articles));
+
+        //contacter la liste des articles et users avec une limit
+        Promise.race([
+            fetch('https://jsonplaceholder.typicode.com/posts/?_limit=5&_delay=2000'),
+            fetch('https://jsonplaceholder.typicode.com/users/?_limit=3')
+    
+        ]).then(reponse => reponse.json()).then(console.log)
+*/
+/* // les DATE 
+        function addDays(date, days){
+            const newDate = new Date();
+            newDate.setDate(date.getDate()+ days);
+            return newDate;
+        }
+        const today = new Date();
+        const tomorrow = addDays(today, 1);
+        console.log(today);
+        console.log(tomorrow);
+
+
+        const MONTHS = 'months';
+        const DAYS = 'days';
+        const YEARS = 'years';
+        function addInterval(date, n, unit){
+            const newDate = new Date();
+            if (unit === 'months'){
+                newDate.setMonth(date.getMonth()+ n);
+                return newDate;
+            }else if (unit === 'years'){
+                newDate.setFullYear(date.getFullYear()+ n);
+                return newDate;
+            }
+            return addDays(date, n);
+        }
+        const today2 = new Date();
+        const future = addInterval(today2, 3, MONTHS);
+        console.log(today2);
+        console.log(future);
+
+        //pour savoir le nombre de jour restant par rapport a une date
+        console.log((future.getTime() - Date.now())/86400000);
+*/
+    </script>
+
+    <script type = "module">
+/* // mettre module quand on veut utiliser le system d'import
+        //importer elément par élement du fichier 
+        import {sum as somme, hello} from './array.js';
+        //importer tout ce qu'il y a dans le fichier. Et faire de A.sum() par exemple
+        import * as A from './array.js'
+        console.log(somme([12,23,19]))
+        //importer par defaut avec le fichier hello.js
+        import salut from './hello.js';
+
+        
+        console.log(salut());
+*/
+    </script>
+
+    <script src="./app.js" defer></script>
+</head>
+
+<body>
+    <div id = "hello">
+        Bonjour les gens
+    </div>
+    <ul>
+        <li style = "color: red">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, doloremque quidem atque modi saepe vel id beatae error aperiam nobis amet, rerum impedit totam ratione praesentium a ut, autem dicta?</li>
+        <li>Reprehenderit at assumenda atque cum nam cupiditate eaque dolor non porro officia ducimus a aliquam inventore eum, dignissimos architecto voluptatum, obcaecati recusandae quod amet neque exercitationem optio. Qui, consequatur minus.</li>
+        <li>Veniam quisquam aspernatur sapiente, molestias doloribus voluptatum sequi fuga, pariatur eius voluptates placeat alias facere aperiam? Officia deserunt atque dolores. Doloremque accusamus omnis veritatis aspernatur assumenda? Dolorum, culpa. Aspernatur, nisi?</li>
+    </ul>
+</body>
+
+</html>
